@@ -1,0 +1,21 @@
+{
+  "name": "research-agent-tutorial",
+  "version": "1.0.0",
+  "description": "Tutorial series comparing different AI research agent implementations",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsx index.ts",
+    "multi-agent": "npx tsx multi-agent/index.ts",
+    "structured": "npx tsx structured-output/index.ts"
+  },
+  "dependencies": {
+    "@openai/agents": "^0.0.9",
+    "@tavily/core": "^0.5.7",
+    "chalk": "^5.4.1",
+    "dotenv": "^16.5.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "zod": "^3.25.67"
+  }
+}
