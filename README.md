@@ -161,10 +161,10 @@ graph TD
     N --> O[Create Structured Report]
     O --> P[Save to Markdown]
     
-    style B fill:#e1f5fe
-    style G fill:#f3e5f5
-    style K fill:#e8f5e8
-    style N fill:#fff3e0
+    style B fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff
+    style G fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style K fill:#FF9800,stroke:#F57C00,stroke-width:2px,color:#fff
+    style N fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
 ```
 
 ## Comparison
