@@ -102,6 +102,71 @@ This implementation uses a linear pipeline with structured outputs for triaging:
 6. ResearchSynthesizerAgent creates comprehensive report
 7. Report saved to `reports/research-structured-[timestamp]-[query].md`
 
+## System Architecture Diagrams
+
+### Multi-Agent System Flow
+
+```mermaid
+graph TD
+    A[User Query] --> B[MainAgent]
+    B --> C{Needs Research?}
+    C -->|No| D[Direct Response]
+    C -->|Clarify| E[Ask Clarification]
+    C -->|Yes| F[LeadResearcher]
+    
+    F --> G[Plan Research Tasks]
+    G --> H[Create SubAgents]
+    H --> I[SubAgent 1<br/>Web Search & Fetch]
+    H --> J[SubAgent 2<br/>Web Search & Fetch]
+    H --> K[SubAgent N<br/>Web Search & Fetch]
+    
+    I --> L[Collect Results]
+    J --> L
+    K --> L
+    
+    L --> M[LeadResearcher Synthesis]
+    M --> N{Research Complete?}
+    N -->|No| G
+    N -->|Yes| O[CitationAgent]
+    O --> P[Final Report]
+    P --> Q[Save to Markdown]
+    
+    style B fill:#e1f5fe
+    style F fill:#f3e5f5
+    style I fill:#e8f5e8
+    style J fill:#e8f5e8
+    style K fill:#e8f5e8
+    style O fill:#fff3e0
+```
+
+### Structured Output System Flow
+
+```mermaid
+graph TD
+    A[User Query] --> B[ClarificationAgent]
+    B --> C{Needs Clarification?}
+    C -->|Yes| D[Ask Questions]
+    D --> E[Enhanced Query]
+    C -->|No| F[Original Query]
+    E --> G[SearchPlannerAgent]
+    F --> G
+    
+    G --> H[Generate 2-5 Search Queries]
+    H --> I[Parallel Web Search]
+    I --> J[Collect All Results]
+    J --> K[FetchDecisionAgent]
+    K --> L[Select Best 5-8 URLs]
+    L --> M[Parallel Content Fetch]
+    M --> N[ResearchSynthesizerAgent]
+    N --> O[Create Structured Report]
+    O --> P[Save to Markdown]
+    
+    style B fill:#e1f5fe
+    style G fill:#f3e5f5
+    style K fill:#e8f5e8
+    style N fill:#fff3e0
+```
+
 ## Comparison
 
 | Aspect              | Multi-Agent                                              | Structured Output                                                    |
