@@ -131,12 +131,12 @@ graph TD
     O --> P[Final Report]
     P --> Q[Save to Markdown]
     
-    style B fill:#e1f5fe
-    style F fill:#f3e5f5
-    style I fill:#e8f5e8
-    style J fill:#e8f5e8
-    style K fill:#e8f5e8
-    style O fill:#fff3e0
+    style B fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff
+    style F fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style I fill:#FF9800,stroke:#F57C00,stroke-width:2px,color:#fff
+    style J fill:#FF9800,stroke:#F57C00,stroke-width:2px,color:#fff
+    style K fill:#FF9800,stroke:#F57C00,stroke-width:2px,color:#fff
+    style O fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
 ```
 
 ### Structured Output System Flow
